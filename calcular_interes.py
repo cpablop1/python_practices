@@ -6,8 +6,11 @@ print('Ingrese la tasa de interés, por ejemplo (0.07, 0.06, 0.05)')
 tasa_interes = float(input()) # Ingresamos la tasa de interés que se aplica sobre el monto inicial
 print('Ingrese la cantiad de días del plazo, por ejemplo (90, 180, 360)')
 dias_plazo = int(input()) # Ingresamos la cantidad de días que estará el monto en el banco de plaza fija
+# El ISR, es el impuesto a pagar sobre la renta, este caso es el 10%
+isr = 0.10
 
 # Hacemos los cálculos con los datos obtenidos
 calculo = monto_inicial * tasa_interes * (dias_plazo / 365)
+calculo = calculo - (calculo * isr)
 
-print(f'\nTu depósito de Q {monto_inicial} generá un interés de Q {calculo} en {dias_plazo} días.')
+print(f'\nTu depósito de Q {monto_inicial} generá un interés de Q {calculo} en {dias_plazo} días.\n')
